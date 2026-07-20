@@ -1,0 +1,39 @@
+{
+  "name": "mohamed-brand-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "test": "vitest --run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "framer-motion": "^12.42.2",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-icons": "^5.7.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.4.1",
+    "@vitest/ui": "^4.1.10",
+    "autoprefixer": "^10.5.4",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "fast-check": "^4.9.0",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.20",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.37.0",
+    "vite": "^5.4.19",
+    "vitest": "^4.1.10"
+  }
+}
