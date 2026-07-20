@@ -36,8 +36,8 @@ const imageVariants = {
 /* ── stats ───────────────────────────────────────── */
 const stats = [
   { value: "+7", label: "سنوات خبرة" },
-  { value: "+700", label: "عميل سعيد" },
-  { value: "+500", label: "مشروع منجز" },
+  { value: "+500", label: "عميل سعيد" },
+  { value: "+700", label: "مشروع منجز" },
 ] as const;
 
 /* ── component ───────────────────────────────────── */
