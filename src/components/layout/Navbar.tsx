@@ -44,7 +44,7 @@ export function Navbar({ items, onNavigate, currentPath }: NavbarProps) {
           : "sticky top-0 z-50 w-full border-b border-transparent bg-transparent"
       }
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-3 sm:px-8 lg:px-10">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-2 sm:px-8 lg:px-10">
 
         {/* ── Logo ── */}
         <button
