@@ -4,9 +4,9 @@ type LogoMarkProps = {
 
 export function LogoMark({ size = "md" }: LogoMarkProps) {
   const widthSize =
-    size === "sm" ? "w-[80px]" : size === "lg" ? "w-[120px]" : "w-[100px]";
+    size === "sm" ? "w-[120px]" : size === "lg" ? "w-[340px]" : "w-[120px]";
   const heightSize =
-    size === "sm" ? "h-[80px]" : size === "lg" ? "h-[120px]" : "h-[100px]";
+    size === "sm" ? "h-[120px]" : size === "lg" ? "h-[340px]" : "h-[120px]";
 
   return (
     <img

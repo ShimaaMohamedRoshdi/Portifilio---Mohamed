@@ -84,29 +84,29 @@ export function Footer({ onNavigate, currentPath }: FooterProps) {
         whileInView="visible"
         viewport={{ once: true, margin: "-60px" }}
         variants={containerVariants}
-        className="relative mx-auto max-w-5xl px-3 pb-8 pt-14 sm:px-4 lg:px-6"
+        className="relative mx-auto max-w-5xl px-3 pb-4 pt-6 sm:px-4 lg:px-6"
       >
         {/* ── top row ──────────────────────────────── */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
 
           {/* brand block */}
           <motion.div variants={itemVariants}>
             <button
               type="button"
               onClick={() => onNavigate("/")}
-              className="group mb-5 inline-flex"
+              className="group mb-2 inline-flex"
               aria-label="الرئيسية"
             >
               <LogoMark size="md" />
             </button>
 
-            <p className="max-w-xs text-sm leading-7 text-white/55">
+            <p className="max-w-xs text-[0.7rem] leading-5 text-white/55">
               مصمم جرافيك مستقل يصنع هويات بصرية فاخرة تعكس جوهر علامتك
               وتبني حضورًا لا يُنسى.
             </p>
 
             {/* social icons */}
-            <div className="mt-6 flex items-center gap-2">
+            <div className="mt-2 flex items-center gap-1.5">
               {socials.map(({ label, href, icon: Icon }) => (
                 <motion.a
                   key={label}
@@ -126,16 +126,16 @@ export function Footer({ onNavigate, currentPath }: FooterProps) {
 
           {/* navigation links */}
           <motion.div variants={itemVariants}>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-white/40">
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.32em] text-white/40">
               الصفحات
             </h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-1.5">
               {navigationItems.map((item) => (
                 <li key={item.href}>
                   <button
                     type="button"
                     onClick={() => onNavigate(item.href)}
-                    className={`group flex items-center gap-2 text-sm transition duration-300 hover:text-white ${
+                    className={`group flex items-center gap-2 text-xs transition duration-300 hover:text-white ${
                       currentPath === item.href
                         ? "text-[#F5B300]"
                         : "text-white/55"
@@ -157,10 +157,10 @@ export function Footer({ onNavigate, currentPath }: FooterProps) {
 
           {/* CTA block */}
           <motion.div variants={itemVariants}>
-            <h3 className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-white/40">
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.32em] text-white/40">
               ابدأ معي
             </h3>
-            <p className="mb-5 text-sm leading-7 text-white/55">
+            <p className="mb-2 text-[0.7rem] leading-5 text-white/55">
               لديك مشروع أو فكرة؟ لا تتردد في التواصل — كل علامة تجارية تستحق
               هوية تليق بها.
             </p>
@@ -178,13 +178,13 @@ export function Footer({ onNavigate, currentPath }: FooterProps) {
         {/* ── divider ──────────────────────────────── */}
         <motion.div
           variants={itemVariants}
-          className="my-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
+          className="my-3 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
         />
 
         {/* ── bottom row ───────────────────────────── */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center justify-between gap-4 sm:flex-row"
+          className="flex flex-col items-center justify-between gap-2 sm:flex-row"
         >
           <p className="flex items-center gap-1.5 text-xs text-white/35">
             © {year}

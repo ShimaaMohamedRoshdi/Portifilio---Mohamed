@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FiArrowLeft, FiPlay } from "react-icons/fi";
 import { siteConfig } from "../../../constants/site";
 import { useState, useEffect } from "react";
+import { ParticleNetwork } from "./ParticleNetwork";
 
 /* ── props ───────────────────────────────────────── */
 type HeroSectionProps = {
@@ -63,6 +64,9 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
   }, []);
   return (
     <section className="relative isolate min-h-[calc(100vh-80px)] overflow-hidden bg-[#0B0713] px-3 py-14 text-white sm:px-4 lg:px-6 lg:py-20">
+
+      {/* ── particle network background ── */}
+      <ParticleNetwork />
 
       {/* ── background blobs ── */}
       <motion.div
