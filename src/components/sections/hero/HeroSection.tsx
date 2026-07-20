@@ -114,14 +114,12 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         <div className="absolute inset-0 soft-grid opacity-40" />
       </motion.div>
 
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto max-w-5xl z-10">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
 
           {/* ── LEFT: text ── */}
           <motion.div
             className="order-2 lg:order-1"
-            animate={{ x: parallaxOffset.x * 0.5, y: parallaxOffset.y * 0.5 }}
-            transition={{ type: "spring", damping: 25, stiffness: 150 }}
           >
             <motion.div
               initial="hidden"
@@ -202,8 +200,6 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
           {/* ── RIGHT: person image ── */}
           <motion.div
             className="order-1 flex justify-center lg:order-2 lg:justify-end"
-            animate={{ x: parallaxOffset.x * 0.8, y: parallaxOffset.y * 0.8 }}
-            transition={{ type: "spring", damping: 20, stiffness: 140 }}
           >
             <motion.div
               initial="hidden"
