@@ -19,7 +19,7 @@ export const aboutContent: AboutContent = {
     },
     {
       id: 2,
-      value: "+700",
+      value: "+500",
       title: "عميل سعيد",
       description: "تجارب عمل ناجحة مع عملاء من مجالات وعلامات متنوعة.",
       icon: "clients",
