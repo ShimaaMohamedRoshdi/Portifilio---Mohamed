@@ -8,13 +8,10 @@ interface Particle {
   radius: number;
 }
 
-const PARTICLE_COUNT = 12;
-const CONNECTION_DISTANCE = 80;
-const PARTICLE_RADIUS = 0.8;
-const PARTICLE_SPEED = 0.1;
-const MOUSE_INFLUENCE_DISTANCE = 180;
-const MOUSE_INFLUENCE_STRENGTH = 0.8;
-const TOP_REGION_HEIGHT = 0.35; // Only top 35% of screen
+const PARTICLE_COUNT = 40;
+const PARTICLE_RADIUS = 2.8;
+const PARTICLE_SPEED = 0.08;
+const MOUSE_INFLUENCE_RADIUS = 220;
 
 export function ParticleNetwork() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -41,90 +38,60 @@ export function ParticleNetwork() {
     };
     window.addEventListener("mousemove", handleMouseMove);
 
-    // Initialize particles only in top region
+    // Initialize particles scattered across entire screen
     const particles: Particle[] = [];
-    const topHeight = canvas.height * TOP_REGION_HEIGHT;
-    
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       particles.push({
         x: Math.random() * canvas.width,
-        y: Math.random() * topHeight,
+        y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * PARTICLE_SPEED,
         vy: (Math.random() - 0.5) * PARTICLE_SPEED,
         radius: PARTICLE_RADIUS,
       });
     }
 
-    // Draw function
-    const draw = () => {
-      // Clear canvas
-      ctx.fillStyle = "rgba(11, 7, 19, 0)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // Animation loop
+    const animate = () => {
+      // Clear with transparent background
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      const topHeight = canvas.height * TOP_REGION_HEIGHT;
-
-      // Update and draw particles
-      particles.forEach((particle, i) => {
-        // Update position
+      particles.forEach((particle) => {
+        // Basic movement
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Mouse influence
-        const dx = mouseRef.current.x - particle.x;
-        const dy = mouseRef.current.y - particle.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < MOUSE_INFLUENCE_DISTANCE) {
-          const force = (1 - distance / MOUSE_INFLUENCE_DISTANCE) * MOUSE_INFLUENCE_STRENGTH;
-          particle.vx += (dx / distance) * force * 0.1;
-          particle.vy += (dy / distance) * force * 0.1;
-        }
-
-        // Bounce off walls and keep in top region
+        // Bounce off edges
         if (particle.x - particle.radius < 0 || particle.x + particle.radius > canvas.width) {
           particle.vx *= -1;
           particle.x = Math.max(particle.radius, Math.min(canvas.width - particle.radius, particle.x));
         }
-        if (particle.y - particle.radius < 0 || particle.y + particle.radius > topHeight) {
+        if (particle.y - particle.radius < 0 || particle.y + particle.radius > canvas.height) {
           particle.vy *= -1;
-          particle.y = Math.max(particle.radius, Math.min(topHeight - particle.radius, particle.y));
+          particle.y = Math.max(particle.radius, Math.min(canvas.height - particle.radius, particle.y));
+        }
+
+        // Mouse repulsion/attraction
+        const dx = mouseRef.current.x - particle.x;
+        const dy = mouseRef.current.y - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < MOUSE_INFLUENCE_RADIUS && distance > 0) {
+          const force = (MOUSE_INFLUENCE_RADIUS - distance) / MOUSE_INFLUENCE_RADIUS;
+          particle.vx += (dx / distance) * force * 0.8;
+          particle.vy += (dy / distance) * force * 0.8;
         }
 
         // Draw particle
-        ctx.fillStyle = "rgba(122, 28, 172, 0.5)";
+        ctx.fillStyle = "rgba(122, 28, 172, 0.7)";
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
         ctx.fill();
-
-        // Draw glow
-        ctx.fillStyle = "rgba(122, 28, 172, 0.08)";
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius * 2, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Draw connections to nearby particles
-        for (let j = i + 1; j < particles.length; j++) {
-          const other = particles[j];
-          const dx = other.x - particle.x;
-          const dy = other.y - particle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < CONNECTION_DISTANCE) {
-            const opacity = (1 - distance / CONNECTION_DISTANCE) * 0.1;
-            ctx.strokeStyle = `rgba(122, 28, 172, ${opacity})`;
-            ctx.lineWidth = 0.6;
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(other.x, other.y);
-            ctx.stroke();
-          }
-        }
       });
 
-      requestAnimationFrame(draw);
+      requestAnimationFrame(animate);
     };
 
-    draw();
+    animate();
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
