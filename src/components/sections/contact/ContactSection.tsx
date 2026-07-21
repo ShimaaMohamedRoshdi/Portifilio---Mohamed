@@ -195,8 +195,24 @@ export function ContactSection() {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    // Simulate network delay — replace with real API call
-    await new Promise((resolve) => setTimeout(resolve, 1600));
+
+    // Create WhatsApp message with form data
+    const whatsappNumber = "972597764770";
+    const message = `
+*رسالة جديدة من موقع البورتفوليو*
+
+👤 *الاسم:* ${form.name}
+📧 *البريد الإلكتروني:* ${form.email}
+📌 *عنوان الرسالة:* ${form.subject}
+💬 *الرسالة:*
+${form.message}
+    `.trim();
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, "_blank");
+
     setLoading(false);
     setSubmitted(true);
   };

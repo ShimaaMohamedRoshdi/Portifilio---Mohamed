@@ -232,8 +232,7 @@ export function AboutSection() {
               <div className="flex flex-col gap-4">
                 {[
                   { year: "2024 — الآن", role: "مصمم جرافيك مستقل", note: "هويات بصرية وحملات إعلانية" },
-                  { year: "2021 — 2024", role: "مصمم أول", note: "تصميم منشورات وهوية العلامات" },
-                  { year: "2018 — 2021", role: "مصمم جرافيك", note: "شعارات ومطبوعات احترافية" },
+                  { year: "2018 — 2024", role: "فريلانس على منصة مستقل", note: "مشاريع متنوعة ومئات العملاء" },
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -246,7 +245,7 @@ export function AboutSection() {
                     {/* timeline dot + line */}
                     <div className="flex flex-col items-center">
                       <div className="h-3 w-3 rounded-full border-2 border-[#F5B300] bg-[#F5B300]/30 shadow-[0_0_8px_rgba(245,179,0,0.6)]" />
-                      {i < 2 && <div className="mt-1 h-full w-px bg-white/10" style={{ minHeight: "2.5rem" }} />}
+                      {i < 1 && <div className="mt-1 h-full w-px bg-white/10" style={{ minHeight: "2.5rem" }} />}
                     </div>
                     <div className="pb-2">
                       <div className="text-[0.65rem] uppercase tracking-[0.26em] text-[#F5B300]/80">
