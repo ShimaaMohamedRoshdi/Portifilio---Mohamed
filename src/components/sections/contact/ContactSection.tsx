@@ -503,7 +503,7 @@ ${form.message}
               </div>
               <p className="mt-3 text-sm leading-7 text-white/65">
                 وقت الاستجابة عادةً خلال{" "}
-                <span className="font-semibold text-[#F5B300]">24 ساعة</span>.
+                <span className="font-semibold text-[#F5B300]">نصف ساعة</span>.
                 لا تتردد في التواصل، كل فكرة تستحق أن تُسمع.
               </p>
             </motion.div>
