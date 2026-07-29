@@ -78,7 +78,7 @@ export const projects: ProjectItem[] = [
     description: "هوية احترافية تُبرز دقة الحرفة وجودة التصنيع.",
     details:
       "تصميم هوية بصرية متكاملة لمصنع خياطة وتطريز — نظام يجمع بين الطابع الصناعي والأناقة البصرية في جميع التطبيقات.",
-    client: "مصنع خياطة وتطريز",
+    client: "  منتجات الحيوانات",
     date: "2025",
     software: ["Illustrator", "Figma"],
     image: "/images/l (2).jfif",
