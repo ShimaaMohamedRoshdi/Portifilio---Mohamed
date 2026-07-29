@@ -28,7 +28,7 @@ export const projects: ProjectItem[] = [
     client: "Scroll اللفائف",
     date: "2025",
     software: ["Illustrator", "Photoshop"],
-    image: "/images/l.png",
+    image: "/images/l22.png",
     link: "https://suar.me/npLZg",
   },
   {
@@ -43,6 +43,19 @@ export const projects: ProjectItem[] = [
     software: ["Illustrator", "Photoshop"],
     image: "/images/l (1).png",
     link: "https://suar.me/NzazO",
+  },
+  {
+    id: 200,
+    title: "Couture by Mouna",
+    category: "هوية بصرية",
+    description: "هوية راقية لبراند خياطة وأزياء بلمسة فنية مميزة.",
+    details:
+      "تصميم هوية بصرية كاملة لـ Couture by Mouna تعكس الأناقة والحرفية — شعار بخط يدوي فاخر مع نظام تطبيقي متكامل.",
+    client: "Couture by Mouna",
+    date: "2025",
+    software: ["Illustrator", "Photoshop"],
+    image: "/images/l (1).jpg",
+    link: "https://suar.me/e9q33",
   },
   {
     id: 3,
@@ -124,16 +137,29 @@ export const projects: ProjectItem[] = [
   },
   {
     id: 9,
-    title: "شعار مؤسسة مجتمع مدني",
+    title: "هوية بصرية لشركة كريبتو",
     category: "شعارات",
-    description: "شعار احترافي لمؤسسة مجتمع مدني.",
+    description: "شعار احترافي  لشركة كريبت.",
     details:
       "تصميم شعار متطور لمؤسسة مجتمع مدني — شعار يعكس القيم الإنسانية والعمل الاجتماعي مع هوية بصرية قوية وثابتة.",
-    client: "مؤسسة مجتمع مدني",
+    client: "هوية بصرية لشركة كريبت",
     date: "2023",
     software: ["Illustrator", "Photoshop"],
-    image: "/images/352.png",
-    link: "https://mostaql.com/portfolio/971008",
+    image: "/images/111.png",
+    link: "https://suar.me/2WGw9",
+  },
+    {
+    id: 90,
+    title: "شعار شركة سياحة وسفر",
+    category: "شعارات",
+    description: "شعار احترافي  لشركة سياحة وسفر.",
+    details:
+      "تصميم شعار متطور لمؤسسة مجتمع مدني — شعار يعكس العمل الاجتماعي مع شركة سياحة قوية .",
+    client: " شعار شركة سياحة وسفر  ",
+    date: "2023",
+    software: ["Illustrator", "Photoshop"],
+    image: "/images/888.jpg",
+    link: "https://suar.me/QX46V",
   },
   // ── سوشيال ميديا ──────────────────────────────────────────────────────────
   {
@@ -207,8 +233,8 @@ export const projects: ProjectItem[] = [
     client: "الحملات الإعلانية",
     date: "2025",
     software: ["Photoshop", "Illustrator"],
-    image: "/images/l (8).jfif",
-    link: "https://suar.me/lpoWM",
+    image: "/images/kk.webp",
+    link: "https://www.behance.net/gallery/169150281/Sitemap-application-logo",
   },
   {
     id: 17,
@@ -231,8 +257,8 @@ export const projects: ProjectItem[] = [
     client: "إعلانات سوشيال ميديا",
     date: "2025",
     software: ["Photoshop", "Illustrator"],
-    image: "/images/l (14).jfif",
-    link: "https://suar.me/9nave",
+    image: "/images/oo.webp",
+    link: "https://www.behance.net/gallery/171081801/Hotel-reservation-website-logo",
   },
   {
     id: 19,
@@ -243,8 +269,8 @@ export const projects: ProjectItem[] = [
     client: "إعلانات سوشيال ميديا",
     date: "2025",
     software: ["Photoshop", "Illustrator"],
-    image: "/images/l (4).png",
-    link: "https://suar.me/N24Ee",
+    image: "/images/mm.webp",
+    link: "https://www.behance.net/gallery/164153805/Travel-company-logo",
   },
   {
     id: 20,
@@ -255,8 +281,8 @@ export const projects: ProjectItem[] = [
     client: "إعلانات سوشيال ميديا",
     date: "2025",
     software: ["Photoshop", "Illustrator"],
-    image: "/images/l (5).png",
-    link: "https://suar.me/dWgj7",
+    image: "/images/yy.jpg",
+    link: "https://www.behance.net/gallery/209536049/_",
   },
   {
     id: 21,
@@ -303,7 +329,7 @@ export const projects: ProjectItem[] = [
     client: "إعلانات سوشيال ميديا",
     date: "2025",
     software: ["Photoshop", "Illustrator"],
-    image: "/images/m.jfif",
-    link: "https://suar.me/xrMlP",
+    image: "/images/uuu.webp",
+    link: "https://www.behance.net/gallery/151990287/Visual-identity-for-a-frozen-food-company",
   },
 ] as const satisfies ProjectItem[];
